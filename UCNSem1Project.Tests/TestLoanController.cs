@@ -35,7 +35,7 @@ namespace Unit_Tests
         public void TestGetAmountOfLoans()
         {
             var result = _loanController.GetAmountOfLoans();
-            Assert.AreEqual(result, 2);
+            Assert.AreEqual(result, 4);
         }
     }
 }
