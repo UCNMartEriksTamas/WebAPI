@@ -30,9 +30,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup python
-        uses: action/setup-python@v2
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
       - name: Run unittest
-        run: python EndpointTester/regression_tests.py
+        run: |
+          dotnet run --project UCNSem1Project
+          cd EndpointTester
+          pip install -r requirements.txt
+          python regression_tests.py
   
