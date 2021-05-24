@@ -36,6 +36,6 @@ jobs:
       - name: Run unittest
         run: |
           cd EndpointTester
-          pip install requirements.txt
+          pip install -r requirements.txt
           python regression_tests.py
   
