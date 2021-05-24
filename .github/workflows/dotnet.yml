@@ -34,5 +34,7 @@ jobs:
         with:
           python-version: '3.x'
       - name: Run unittest
-        run: python EndpointTester/regression_tests.py
+        run: |
+          pip install requirements.txt
+          python EndpointTester/regression_tests.py
   
